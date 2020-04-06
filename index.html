@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- 
+Adapted from https://medium.com/@paudelanjanchandra/download-google-drive-files-using-wget-3c2c025a8b99
+By Chris Donahue (@chrisdonahuey)
+chrisdonahue.com
+You can use this for whatever
+-->
+
+<html lang="en">
+  <head>
+    <title>GDrive URL to wget command</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      Converts a Google Drive link to a terminal-friendly wget command.
+    </div>
+    <div>
+      Google Drive Link: <input type="text" id="gdrive-uri" placeholder="https://drive.google.com/open?id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" /><br />
+      Output file name: <input type="text" id="file-fn" value="foo.txt" /><br />
+      Large file (&gt;32MB): <input type="checkbox" id="file-large" /><br />
+      <button id="copy" hidden>
+        Copy to clipboard
+      </button>
+    </div>
+    <div id="wget-cmd-div">
+      <code id="wget-cmd"></code>
+    </div>
+  </body>
+</html>
