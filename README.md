@@ -1,4 +1,4 @@
-## Download Google Drive files on the command line
+## `gdrive-wget`: Download Google Drive files on the command line
 
 This is a simple website to generate commands for downloading files from public Google Drive URLs via `wget` on the command line. Everything is client-side JavaScript; your Google Drive links will not be sent to a server.
 
