@@ -22,8 +22,22 @@ function onChange() {
     return;
   }
 
-  const gdriveIdSplit = gdriveUri.split("=");
-  const gdriveId = gdriveIdSplit[gdriveIdSplit.length - 1];
+  let gdriveId = '';
+  if (gdriveUri.includes('id=')) {
+    // Old style
+    const gdriveIdSplit = gdriveUri.split("=");
+    gdriveId = gdriveIdSplit[gdriveIdSplit.length - 1];
+  } else {
+    // New style
+    const gdriveIdSplit = gdriveUri.split("/");
+    for (let i = 0; i < gdriveIdSplit.length; ++i) {
+      const seg = gdriveIdSplit[i];
+      if (seg.length <= 33 && seg.length > gdriveId.length) {
+        gdriveId = seg;
+      }
+    }
+  }
+
   const fileFn = fileFnInputEl.value;
 
   if (fileLargeInputEl.checked) {
